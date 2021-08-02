@@ -1,37 +1,36 @@
 package com.wss;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import com.wss.controller.DevicesController;
-import com.wss.controller.LoginContoller;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+
 public class UnitTest {
-
-	@Autowired
-	private LoginContoller loginController;
 	
-	@Autowired
-	private DevicesController devicesController;
 	
-	@Test
-	public void loginContollerLoginPage() {
-		Assert.assertEquals("login", loginController.getLoginPage());
-	}
-	
-	@Test
-	public void devices() {
-		if(null != devicesController.getAllDevices()) {
-			Assert.assertTrue("Output is not a null object", true);
-		}else {
-			Assert.fail();
+	public void button() 
+	{
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Hp\\Desktop\\Selenium\\chromedriver.exe");
+			WebDriver driver=new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("http://localhost:9090/wss/login");
+			driver.findElement(By.cssSelector(".login-logo")).click();
+			String actualUrl="http://localhost:9090/wss/home";
+			String expectedUrl= driver.getCurrentUrl();
+			if(actualUrl.equalsIgnoreCase(expectedUrl))
+	        {
+	            System.out.println("Test passed");
+	        }
+	        else
+	        {
+	            System.out.println("Test failed");
+	        }
 		}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UnitTest myobj1 = new UnitTest();
+		myobj1.button();
 	}
 
 }
