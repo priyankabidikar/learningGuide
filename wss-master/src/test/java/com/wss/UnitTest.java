@@ -1,14 +1,16 @@
 package com.wss;
 
 
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 
 public class UnitTest {
 	
-	
+	@Test
 	public void button() 
 	{
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Hp\\Desktop\\Selenium\\chromedriver.exe");
@@ -26,11 +28,7 @@ public class UnitTest {
 	        {
 	            System.out.println("Test failed");
 	        }
-		}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		UnitTest myobj1 = new UnitTest();
-		myobj1.button();
+	 driver.close();
 	}
-
 }
+
