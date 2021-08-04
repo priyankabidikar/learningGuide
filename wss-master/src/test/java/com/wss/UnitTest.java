@@ -9,6 +9,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import com.wss.controller.DevicesController;
 import com.wss.controller.LoginContoller;
+import com.wss.service.DeviceService;
+import com.wss.service.impl.DeviceServiceImpl;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -27,6 +29,22 @@ public class UnitTest {
 	
 	@Autowired
 	private DevicesController devicesController;
+	@Autowired
+	private DeviceService deviceService;
+	@Autowired
+	private DeviceServiceImpl deviceServiceImpl;
+	
+	@Test
+	public void deviceServiceImplTest(){
+		Assert.assertNotSame(deviceService.getAllDevices(),deviceServiceImpl.getAllDevices());
+	}
+	
+	@Test
+	public void deviceServiceTest(){
+		if(null != deviceService.getAllDevices())
+		Assert.assertTrue("output is not a null object",true);
+	}
+	
 	
 	@Test
 	public void loginContollerLoginPage() {
