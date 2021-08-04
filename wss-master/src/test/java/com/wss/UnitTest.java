@@ -9,9 +9,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import com.wss.controller.DevicesController;
 import com.wss.controller.LoginContoller;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -48,10 +45,6 @@ public class UnitTest {
 		}else {
 			Assert.fail();
 		}
-	}
-	@Test
-	public void session() {
-		Assert.assertEquals("redirect:login",loginController.logout());
 	}
 	@BeforeClass		
     public static void m1() {							
