@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
-import com.wss.controller.DeviceController;
+import com.wss.controller.DevicesController;
 import com.wss.controller.LoginContoller;
 import com.wss.service.DeviceService;
 import com.wss.service.impl.DeviceServiceImpl;
@@ -28,7 +28,7 @@ public class UnitTest {
 	private LoginContoller loginController;
 	
 	@Autowired
-	private DeviceController deviceController;
+	private DevicesController deviceController;
 	@Autowired
 	private DeviceService deviceService;
 	@Autowired
